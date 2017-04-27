@@ -1,4 +1,3 @@
-
 from datetime import datetime, time
 import pytz
 
@@ -6,7 +5,17 @@ z = datetime.now(pytz.utc)
 t = datetime.now()
 now_t = t.time()
 now_z = z.time()
+work_day = datetime.today().weekday()
 
+
+def weekday():
+    if work_day in range(0,4):
+        print('Its a work day')
+        portland_time()
+    else:
+        print('Its not a work day. Take a break')
+
+        
 def portland_time():
     print('portland date and time: ')
     print(t)
@@ -37,6 +46,6 @@ def london_time():
         print('Closed! Come back between 9am and 9pm')
 
 
-portland_time()
+weekday()
 
 
